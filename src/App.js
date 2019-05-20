@@ -21,7 +21,8 @@ class App extends React.Component {
     return (
       <div>
         <Titles />
-        <Form />
+        {/* loadWeather is the propName that will be referenced in Form component  */}
+        <Form loadWeather={this.getWeather} />
         <Weather />
       </div>
     )
