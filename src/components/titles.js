@@ -1,4 +1,5 @@
 import React from 'react';
+// ?? Functional component. Unlikely to have state?
 const Titles = (props) => {
   return (
     <div>
