@@ -1,5 +1,5 @@
 import React from 'react';
-// ?? Functional component. Unlikely to have state?
+// Functional component. Unlikely to have state. Just renders something. Build these unless there's a reason to make a Class based component. Works the same as a render function in a class based component.
 const Titles = (props) => {
   return (
     <div>

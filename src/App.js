@@ -1,18 +1,18 @@
 import React from 'react';
-// ?? Why do I need the ./ for the paths to work?
 import Titles from './components/titles';
 import Form from './components/form';
 import Weather from './components/weather';
 
-// ?? How is this file running locally (browser interpreting JSX, etc) without running npm run build?
-
-// ?? Class based component. Likely to have state??
+// Class based component. Likely to have state...eventually...
 class App extends React.Component {
   getWeather = async (e) => {
     // prevent default browser behavior of full page refresh
     e.preventDefault();
+    // city.value is the value of the name attribute defined in form.js
+    const city = e.target.elements.city.value;
+    const country = e.target.elements.country.value;
     const Api_Key = "fdb1ebbb01af7dc02ca2faf5f980f3a6";
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=london,uk&appid=${Api_Key}`);
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${Api_Key}`);
     const response = await api_call.json();
     console.log(response);
   }
